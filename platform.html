@@ -49,29 +49,19 @@
                         margin-right: 0.25rem rem;
                         margin-bottom: 0.25rem;
                         cursor: pointer;
-                        --el-tag-font-size: 12px;
-                        --el-tag-border-radius: 4px;
-                        --el-tag-border-radius-rounded: 9999px;
                         white-space: nowrap;
                         font-size: 12px;
                         line-height: 1;
                         border-width: 1px;
                         border-style: solid;
                         border-radius: 4px;
-                        background-color: #da2428;
-                        border-color: #ed9193;
-                        color: #ffff;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
                         vertical-align: middle;
                         padding: 0 7px;
                         height: 20px;
-                        --el-icon-size: 12px;
                         box-sizing: border-box;
-                        --el-tag-bg-color: #ffffff;
-                        --el-tag-border-color: #ed9193;
-                        --el-tag-hover-color: #da2428;
                         padding-right: 3px;
 
                         .icon {
@@ -81,7 +71,6 @@
                             align-items: center;
                             position: relative;
                             fill: currentColor;
-                            --color: inherit;
                             flex-shrink: 0;
                             color: #ffffff;
                             border-radius: 50%;
@@ -109,9 +98,6 @@
                         margin-right: 0.25rem;
                         margin-bottom: 0.25rem;
                         cursor: pointer;
-                        --el-tag-font-size: 12px;
-                        --el-tag-border-radius: 4px;
-                        --el-tag-border-radius-rounded: 9999px;
                         white-space: nowrap;
                         font-size: 12px;
                         line-height: 1;
@@ -127,13 +113,35 @@
                         vertical-align: middle;
                         padding: 0 7px;
                         height: 20px;
-                        --el-icon-size: 12px;
                         box-sizing: border-box;
-                        --el-tag-text-color: #da2428;
-                        --el-tag-bg-color: #ffffff;
-                        --el-tag-border-color: #ed9193;
-                        --el-tag-hover-color: #da2428;
                         padding-right: 3px;
+
+                        .icon {
+                            line-height: 1em;
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            fill: currentColor;
+                            flex-shrink: 0;
+                            color: #da2428;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            font-size: 10px;
+                            height: 12px;
+                            width: 12px;
+                            margin-left: 4px;
+
+                        }
+
+                        .icon:hover {
+                            background-color: #da2428;
+                            color:#ebeef5
+                        }
+
+                        .icon.close-icon:hover {
+                            background-color: transparent;
+                        }
                     }
 
                     .footer {
