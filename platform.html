@@ -49,9 +49,6 @@
                         margin-right: 0.25rem rem;
                         margin-bottom: 0.25rem;
                         cursor: pointer;
-                        --el-tag-font-size: 12px;
-                        --el-tag-border-radius: 4px;
-                        --el-tag-border-radius-rounded: 9999px;
                         white-space: nowrap;
                         font-size: 12px;
                         line-height: 1;
@@ -67,7 +64,6 @@
                         vertical-align: middle;
                         padding: 0 7px;
                         height: 20px;
-                        --el-icon-size: 12px;
                         box-sizing: border-box;
                         padding-right: 3px;
 
@@ -143,12 +139,78 @@
 
                         .icon:hover {
                             background-color: #da2428;
-                            color:#ebeef5
+                            color: #ebeef5
                         }
 
                         .icon.close-icon:hover {
                             background-color: transparent;
                         }
+                    }
+
+                    .add_task {
+                        vertical-align: middle;
+                        line-height: 24px;
+                        display: inline-flex;
+                        position: relative;
+                        font-size: 12px;
+                        box-sizing: border-box;
+                        width: 100px;
+
+                        div {
+                            background-color: #ffffff;
+                            background-image: none;
+                            border-radius: 4px;
+                            cursor: text;
+                            transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+                            transform: translate3d(0, 0, 0);
+                            box-shadow: 0 0 0 1px #dcdfe6 inset;
+                            display: inline-flex;
+                            flex-grow: 1;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 1px 7px;
+
+                            input {
+                                resize: none;
+                                width: 100%;
+                                flex-grow: 1;
+                                color: #606266;
+                                font-size: inherit;
+                                height: 22px;
+                                line-height: 22px;
+                                padding: 0;
+                                outline: 0;
+                                border: none;
+                                background: 0 0;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+
+                    .add_task_button {
+                        user-select: none;
+                        vertical-align: middle;
+                        background-color: var(--el-button-bg-color);
+                        border: var(--el-border);
+                        border-color: var(--el-button-border-color);
+                        outline: 0;
+                        transition: .1s;
+                        font-weight: var(--el-button-font-weight);
+                        white-space: nowrap;
+                        cursor: pointer;
+                        color: var(--el-button-text-color);
+                        text-align: center;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        line-height: 1;
+                        --el-button-size: 24px;
+                        height: var(--el-button-size);
+                        padding: 5px 11px;
+                        font-size: 12px;
+                        border-radius: calc(var(--el-border-radius-base) - 1px);
+                        margin-left: 0.25rem;
+                        box-sizing: border-box;
                     }
 
                     .footer {
@@ -178,6 +240,12 @@
                         </path>
                     </svg></i>
             </span>
+            <div v-if="if_edit_add_task" class="add_task">
+                <div>
+                    <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name">
+                </div>
+            </div>
+            <button v-else aria-disabled="false" type="button" class="add_task_button"></button>
         </div>
         <div class="footer">
 
@@ -188,6 +256,8 @@
             el: '#app',
             data: {
                 present_task: "920517685332148224",
+                if_edit_add_task: false,
+                new_task_name: '',
                 tasks: [
                     {
                         "taskName": "通知公告",
