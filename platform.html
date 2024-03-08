@@ -190,27 +190,126 @@
                     .add_task_button {
                         user-select: none;
                         vertical-align: middle;
-                        background-color: var(--el-button-bg-color);
-                        border: var(--el-border);
-                        border-color: var(--el-button-border-color);
+                        background-color: #ffffff;
+                        border: 1px solid #dcdfe6;
+                        border-color: #dcdfe6;
                         outline: 0;
                         transition: .1s;
-                        font-weight: var(--el-button-font-weight);
+                        font-weight: 500;
                         white-space: nowrap;
                         cursor: pointer;
-                        color: var(--el-button-text-color);
+                        color: #606266;
                         text-align: center;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
                         line-height: 1;
                         --el-button-size: 24px;
-                        height: var(--el-button-size);
+                        height: 24px;
                         padding: 5px 11px;
                         font-size: 12px;
-                        border-radius: calc(var(--el-border-radius-base) - 1px);
+                        border-radius: 3px;
                         margin-left: 0.25rem;
                         box-sizing: border-box;
+
+                        span {
+                            display: inline-flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .wrapper {
+                        box-sizing: border-box;
+
+                        .form_container {
+                            padding-top: 20px;
+
+                            .module {
+                                margin-bottom: 30px;
+
+                                h4 {
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    margin-bottom: 10px;
+                                }
+
+                                .form_item {
+                                    align-items: center;
+                                    display: flex;
+                                    margin-bottom: 18px;
+                                }
+
+                                .form_item_label {
+                                    display: inline-flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-start;
+                                    flex: 0 0 auto;
+                                    font-size: 14px;
+                                    color: #606266;
+                                    height: 32px;
+                                    line-height: 32px;
+                                    padding: 0 12px 0 0;
+                                    box-sizing: border-box;
+                                    width: 120px;
+                                }
+
+                                .form_item_content {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    flex: 1;
+                                    line-height: 32px;
+                                    position: relative;
+                                    font-size: 14px;
+                                    min-width: 0;
+                                    width:800px
+
+                                }
+
+                                .taskid {
+                                    color: #666;
+                                }
+
+                                .input {
+                                    position: relative;
+                                    font-size: 14px;
+                                    display: inline-flex;
+                                    width: 100%;
+                                    line-height: 32px;
+                                    box-sizing: border-box;
+                                    vertical-align: middle;
+                                }
+
+                                .input_wrapper {
+                                    display: inline-flex;
+                                    flex-grow: 1;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 1px 11px;
+                                    background-color: #ffffff;
+                                    background-image: none;
+                                    border-radius: 4px;
+                                    cursor: text;
+                                    transition: box-shadow .2s cubic-bezier(.645, .045, .355, 1);
+                                    transform: translateZ(0);
+                                    box-shadow: 0 0 0 1px #dcdfe6 inset;
+                                }
+
+                                .input__inner {
+                                    width: 100%;
+                                    flex-grow: 1;
+                                    color: #606266;
+                                    font-size: inherit;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    padding: 0;
+                                    outline: 0;
+                                    border: none;
+                                    background: 0 0;
+                                    box-sizing: border-box;
+                                }
+                            }
+                        }
                     }
 
                     .footer {
@@ -228,7 +327,7 @@
 <body>
     <span tabindex="-1"></span>
     <header>
-        <span>Crawler Config</span>
+        <span>采集配置</span>
     </header>
     <div id="app">
         <div class="body">
@@ -245,7 +344,48 @@
                     <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name">
                 </div>
             </div>
-            <button v-else aria-disabled="false" type="button" class="add_task_button"></button>
+            <button v-else aria-disabled="false" type="button" class="add_task_button">
+                <span>+新增任务</span>
+            </button>
+            <div class="wrapper">
+                <div class="form_container" v-for="task in tasks" :key="task.taskId" v-if="task.taskId===present_task">
+                    <form element-loading-text>
+                        <div class="module">
+                            <h4>基础信息</h4>
+                            <div class="form_item">
+                                <div class="form_item_label">
+                                    采集链接
+                                </div>
+                                <div class="form_item_content">
+                                    <div class="input">
+                                        <div class="input_wrapper" tabindex="-1">
+                                            <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                v-model="task.collectTargetUrl">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_item_label">
+                                    任务ID
+                                </div>
+                                <div class="form_item_content">
+                                    <p class="taskid">{{task.taskId}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module">
+
+                        </div>
+                        <div class="module">
+
+                        </div>
+                        <div class="overlay" style="z-index: 2055; display: none;">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="footer">
 
