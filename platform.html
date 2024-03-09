@@ -227,7 +227,7 @@
                             .module {
                                 margin-bottom: 30px;
 
-                                h4 {
+                                h3 {
                                     font-size: 16px;
                                     font-weight: 600;
                                     margin-bottom: 10px;
@@ -236,7 +236,7 @@
                                 .form_item {
                                     align-items: center;
                                     display: flex;
-                                    margin-bottom: 18px;
+                                    margin-bottom: 60px;
                                 }
 
                                 .form_item_label {
@@ -262,8 +262,7 @@
                                     position: relative;
                                     font-size: 14px;
                                     min-width: 0;
-                                    width:800px
-
+                                    width: 800px
                                 }
 
                                 .taskid {
@@ -312,11 +311,38 @@
                         }
                     }
 
-                    .footer {
-                        padding: 20px;
-                        padding-top: 10px;
-                        text-align: right;
-                        border-top: 1px solid #ebeef5;
+
+                }
+
+                .footer {
+                    padding: 20px;
+                    padding-top: 10px;
+                    text-align: right;
+                    border-top: 1px solid #ebeef5;
+
+                    span {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        button {
+                            user-select: none;
+                            vertical-align: middle;
+                            background-color: #da2428;
+                            border: 1px solid #dcdfe6;
+                            border-color: #dcdfe6;
+                            padding: 8px 15px;
+                            font-size: 14 px;
+                            border-radius: 4px;
+                            margin-left: 12px;
+                            cursor: pointer;
+                            color: #ffffff;
+                            margin-right: 30PX;
+
+                            span {
+                                display: inline-flex;
+                                align-items: center;
+                            }
+                        }
                     }
                 }
             }
@@ -331,7 +357,8 @@
     </header>
     <div id="app">
         <div class="body">
-            <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)">
+            <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)"
+                @click="present_task=task.taskId">
                 <span>{{task.taskName}} </span>
                 <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                         <path fill="currentColor"
@@ -344,14 +371,14 @@
                     <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name">
                 </div>
             </div>
-            <button v-else aria-disabled="false" type="button" class="add_task_button">
+            <button v-else aria-disabled="false" type="button" class="add_task_button" @click="if_edit_add_task=true">
                 <span>+新增任务</span>
             </button>
             <div class="wrapper">
                 <div class="form_container" v-for="task in tasks" :key="task.taskId" v-if="task.taskId===present_task">
                     <form element-loading-text>
                         <div class="module">
-                            <h4>基础信息</h4>
+                            <h3>基础信息</h3>
                             <div class="form_item">
                                 <div class="form_item_label">
                                     采集链接
@@ -375,10 +402,34 @@
                             </div>
                         </div>
                         <div class="module">
-
+                            <h3>列表页配置</h3>
+                            <div class="form_item" v-for="item in list_config" :key="item.id">
+                                <div class="form_item_label">{{item.name}}</div>
+                                <div class="form_item_content">
+                                    <div class="input">
+                                        <div class="input_wrapper" tabindex="-1">
+                                            <input type="text" class="input__inner" autocomplete="off"
+                                                :placeholder="'请输入'+item.name" v-model="task.list_config[item.id]">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="module">
-
+                            <h3>详情页配置</h3>
+                            <div class="form_item">
+                                <div class="form_item_label">
+                                    正文规则
+                                </div>
+                                <div class="form_item_content">
+                                    <div class="input">
+                                        <div class="input_wrapper" tab_index="-1">
+                                            <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                placeholder="请输入正文规则" v-model="task.content_config.content">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="overlay" style="z-index: 2055; display: none;">
 
@@ -388,7 +439,11 @@
             </div>
         </div>
         <div class="footer">
-
+            <span>
+                <button>
+                    <span>采集并查看结果</span>
+                </button>
+            </span>
         </div>
     </div>
     <script>
@@ -398,16 +453,33 @@
                 present_task: "920517685332148224",
                 if_edit_add_task: false,
                 new_task_name: '',
+                list_config: [
+                    { id: 'url', name: "链接跳转规则" },
+                    { id: 'title', name: "标题规则" }
+                ],
                 tasks: [
                     {
                         "taskName": "通知公告",
                         "collectTargetUrl": "https://czj.wuhan.gov.cn/BMDT/TZGG/",
-                        "taskId": "920517685332148224"
+                        "taskId": "920517685332148224",
+                        "list_config": {
+                            "url": "//ul[@class='list-b hover-style1']/li/a",
+                            "title": "//ul[@class='list-b hover-style1']/li[1]/a/h4"
+                        },
+                        "content_config": {
+                            "content": "//div[@id='article-box']"
+                        }
                     },
                     {
                         "taskName": "规范性文件",
                         "collectTargetUrl": "https://czj.wuhan.gov.cn/FBJD/ZCWJ/GFWJ/",
-                        "taskId": "920517937411178496"
+                        "taskId": "920517937411178496",
+                        "list_config": {
+
+                        },
+                        "content_config": {
+
+                        }
                     }
                 ]
             },
