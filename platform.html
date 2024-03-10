@@ -366,9 +366,10 @@
                         </path>
                     </svg></i>
             </span>
-            <div v-if="if_edit_add_task" class="add_task">
+            <div v-if="if_edit_add_task" class="add_task" @keyup.enter="if_edit_add_task=false">
                 <div>
-                    <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name">
+                    <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name"
+                        @blur="if_edit_add_task=false">
                 </div>
             </div>
             <button v-else aria-disabled="false" type="button" class="add_task_button" @click="if_edit_add_task=true">
@@ -457,6 +458,7 @@
                     { id: 'url', name: "链接跳转规则" },
                     { id: 'title', name: "标题规则" }
                 ],
+                preview_results: [],
                 tasks: [
                     {
                         "taskName": "通知公告",
@@ -464,7 +466,7 @@
                         "taskId": "920517685332148224",
                         "list_config": {
                             "url": "//ul[@class='list-b hover-style1']/li/a",
-                            "title": "//ul[@class='list-b hover-style1']/li[1]/a/h4"
+                            "title": "//ul[@class='list-b hover-style1']/li/a/h4"
                         },
                         "content_config": {
                             "content": "//div[@id='article-box']"
@@ -475,10 +477,11 @@
                         "collectTargetUrl": "https://czj.wuhan.gov.cn/FBJD/ZCWJ/GFWJ/",
                         "taskId": "920517937411178496",
                         "list_config": {
-
+                            "url": "",
+                            "title": ""
                         },
                         "content_config": {
-
+                            "content": ""
                         }
                     }
                 ]
@@ -489,6 +492,52 @@
                         return "tag_select"
                     } else {
                         return "tag_default"
+                    }
+                },
+                get_preview() {
+                    const task = this.tasks.filter(task => task["taskId"] === this.present_task)[0]
+                    data = {
+                        "collectTargetUrl": task["collectTargetUrl"],
+                        "taskId": this.present_task,
+                        "taskName": task["taskName"],
+                        "taskPageDetailLines": [
+                            {
+                                "pageCollectTypeValue": task["content_config"]["content"],
+                                "taskTypeCode": "detail_word"
+                            }
+                        ],
+                        "taskPageListLines": [
+                            {
+                                "pageCollectTypeValue": task["list_config"]["url"],
+                                "taskTypeCode": "list_url"
+                            },
+                            {
+                                "pageCollectTypeValue": task["list_config"]["title"],
+                                "taskTypeCode": "list_title"
+                            }
+                        ]
+                    }
+                    console.log(data);
+                    result = this.get_preview_response(data).then()
+                    console.log(result)
+                },
+                async get_preview_response(data) {
+                    const preview_api = "http://lostjay.xyz:8888/crawler/preview"
+                    try {
+                        const response = await fetch(
+                            preview_api,
+                            {
+                                method: "POST",
+                                body: JSON.stringify(data)
+                            }
+                        )
+                        if (!response.ok) {
+                            throw new Error("网络错误")
+                        }
+                        const result = await response.json();
+                        return result
+                    } catch (error) {
+                        console.error("请求失败", error)
                     }
                 }
             }
