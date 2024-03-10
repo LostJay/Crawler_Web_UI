@@ -7,7 +7,7 @@
     <title>Crawling Platform</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
     <style>
-        body {
+        .config {
             position: absolute;
             box-sizing: border-box;
             background-color: #ffff;
@@ -351,100 +351,101 @@
 </head>
 
 <body>
-    <span tabindex="-1"></span>
-    <header>
-        <span>采集配置</span>
-    </header>
-    <div id="app">
-        <div class="body">
-            <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)"
-                @click="present_task=task.taskId">
-                <span>{{task.taskName}} </span>
-                <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                        <path fill="currentColor"
-                            d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z">
-                        </path>
-                    </svg></i>
-            </span>
-            <div v-if="if_edit_add_task" class="add_task" @keyup.enter="if_edit_add_task=false">
-                <div>
-                    <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name"
-                        @blur="if_edit_add_task=false">
+    <div class="config">
+        <span tabindex="-1"></span>
+        <header>
+            <span>采集配置</span>
+        </header>
+        <div id="app">
+            <div class="body">
+                <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)"
+                    @click="present_task=task.taskId">
+                    <span>{{task.taskName}} </span>
+                    <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor"
+                                d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z">
+                            </path>
+                        </svg></i>
+                </span>
+                <div v-if="if_edit_add_task" class="add_task" @keyup.enter="if_edit_add_task=false">
+                    <div>
+                        <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name"
+                            @blur="if_edit_add_task=false">
+                    </div>
                 </div>
-            </div>
-            <button v-else aria-disabled="false" type="button" class="add_task_button" @click="if_edit_add_task=true">
-                <span>+新增任务</span>
-            </button>
-            <div class="wrapper">
-                <div class="form_container" v-for="task in tasks" :key="task.taskId" v-if="task.taskId===present_task">
-                    <form element-loading-text>
-                        <div class="module">
-                            <h3>基础信息</h3>
-                            <div class="form_item">
-                                <div class="form_item_label">
-                                    采集链接
-                                </div>
-                                <div class="form_item_content">
-                                    <div class="input">
-                                        <div class="input_wrapper" tabindex="-1">
-                                            <input type="text" class="input__inner" autocomplete="off" tabindex="0"
-                                                v-model="task.collectTargetUrl">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form_item">
-                                <div class="form_item_label">
-                                    任务ID
-                                </div>
-                                <div class="form_item_content">
-                                    <p class="taskid">{{task.taskId}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="module">
-                            <h3>列表页配置</h3>
-                            <div class="form_item" v-for="item in list_config" :key="item.id">
-                                <div class="form_item_label">{{item.name}}</div>
-                                <div class="form_item_content">
-                                    <div class="input">
-                                        <div class="input_wrapper" tabindex="-1">
-                                            <input type="text" class="input__inner" autocomplete="off"
-                                                :placeholder="'请输入'+item.name" v-model="task.list_config[item.id]">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="module">
-                            <h3>详情页配置</h3>
-                            <div class="form_item">
-                                <div class="form_item_label">
-                                    正文规则
-                                </div>
-                                <div class="form_item_content">
-                                    <div class="input">
-                                        <div class="input_wrapper" tab_index="-1">
-                                            <input type="text" class="input__inner" autocomplete="off" tabindex="0"
-                                                placeholder="请输入正文规则" v-model="task.content_config.content">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="overlay" style="z-index: 2055; display: none;">
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <span>
-                <button @click="get_preview">
-                    <span>采集并查看结果</span>
+                <button v-else aria-disabled="false" type="button" class="add_task_button"
+                    @click="if_edit_add_task=true">
+                    <span>+新增任务</span>
                 </button>
-            </span>
+                <div class="wrapper">
+                    <div class="form_container" v-for="task in tasks" :key="task.taskId"
+                        v-if="task.taskId===present_task">
+                        <form element-loading-text>
+                            <div class="module">
+                                <h3>基础信息</h3>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        采集链接
+                                    </div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tabindex="-1">
+                                                <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                    v-model="task.collectTargetUrl">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        任务ID
+                                    </div>
+                                    <div class="form_item_content">
+                                        <p class="taskid">{{task.taskId}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <h3>列表页配置</h3>
+                                <div class="form_item" v-for="item in list_config" :key="item.id">
+                                    <div class="form_item_label">{{item.name}}</div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tabindex="-1">
+                                                <input type="text" class="input__inner" autocomplete="off"
+                                                    :placeholder="'请输入'+item.name" v-model="task.list_config[item.id]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <h3>详情页配置</h3>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        正文规则
+                                    </div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tab_index="-1">
+                                                <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                    placeholder="请输入正文规则" v-model="task.content_config.content">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <span>
+                    <button @click="get_preview">
+                        <span>采集并查看结果</span>
+                    </button>
+                </span>
+            </div>
         </div>
     </div>
     <script>
