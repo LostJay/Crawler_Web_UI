@@ -441,7 +441,7 @@
         </div>
         <div class="footer">
             <span>
-                <button>
+                <button @click="get_preview">
                     <span>采集并查看结果</span>
                 </button>
             </span>
@@ -518,8 +518,18 @@
                         ]
                     }
                     console.log(data);
-                    result = this.get_preview_response(data).then()
-                    console.log(result)
+                    this.get_preview_response(data).then(
+                        result => {
+                            console.log(result);
+                            const code = result.code
+                            if (code == 200) {
+                                const data = result.data
+                                console.log(data);
+                            } else {
+                                alert(result.message)
+                            }
+                        }
+                    )
                 },
                 async get_preview_response(data) {
                     const preview_api = "http://lostjay.xyz:8888/crawler/preview"
