@@ -740,9 +740,9 @@
                                                             </td>
                                                             <td v-for="head in ['pics','videos']">
                                                                 <span v-if="item[head].length===0">-</span>
-                                                                <a v-else v-for="i in item[head]" target="_blank"
-                                                                    :href="i">
-                                                                    {{i}}
+                                                                <a v-else v-for="(i,index) in item[head]"
+                                                                    target="_blank" :href="i">
+                                                                    {{head+index}}
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -864,8 +864,8 @@
                         }
                     },
                     {
-                        "taskName": "规范性文件",
-                        "collectTargetUrl": "https://czj.wuhan.gov.cn/FBJD/ZCWJ/GFWJ/",
+                        "taskName": "豆瓣电影排行榜",
+                        "collectTargetUrl": "https://movie.douban.com/top250",
                         "taskId": "920517937411178496",
                         "list_config": {
                             "url": "",
