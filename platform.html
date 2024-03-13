@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
     <style>
         .config {
+            overflow-y: auto;
+            height: 100%;
             position: absolute;
             box-sizing: border-box;
             background-color: #ffff;
@@ -852,20 +854,20 @@
                     }],
                 tasks: [
                     {
-                        "taskName": "通知公告",
-                        "collectTargetUrl": "https://czj.wuhan.gov.cn/BMDT/TZGG/",
+                        "taskName": "豆瓣电影排行榜",
+                        "collectTargetUrl": "https://movie.douban.com/top250",
                         "taskId": "920517685332148224",
                         "list_config": {
-                            "url": "//ul[@class='list-b hover-style1']/li/a",
-                            "title": "//ul[@class='list-b hover-style1']/li/a/h4"
+                            "url": "//ol[@class='grid_view']/li/div[@class='item']/div[@class='info']/div[@class='hd']/a[1]",
+                            "title": "//ol[@class='grid_view']/li/div[@class='item']/div[@class='info']/div[@class='hd']/a/span[@class='title'][1]"
                         },
                         "content_config": {
-                            "content": "//div[@id='article-box']"
+                            "content": "//div[@id='wrapper']"
                         }
                     },
                     {
-                        "taskName": "豆瓣电影排行榜",
-                        "collectTargetUrl": "https://movie.douban.com/top250",
+                        "taskName": "我的采集测试",
+                        "collectTargetUrl": "",
                         "taskId": "920517937411178496",
                         "list_config": {
                             "url": "",
