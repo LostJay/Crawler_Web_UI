@@ -40,146 +40,269 @@
                 }
             }
 
-            #app {
-                .body {
-                    flex: 1;
-                    padding: 20px;
-                    overflow: auto;
 
-                    .tag_select {
-                        margin-left: 0.25rem;
-                        margin-right: 0.25rem rem;
-                        margin-bottom: 0.25rem;
-                        cursor: pointer;
-                        white-space: nowrap;
-                        font-size: 12px;
-                        line-height: 1;
-                        border-width: 1px;
-                        border-style: solid;
-                        border-radius: 4px;
-                        background-color: #da2428;
-                        border-color: #ed9193;
-                        color: #ffff;
+            .body {
+                flex: 1;
+                padding: 20px;
+                overflow: auto;
+
+                .tag_select {
+                    margin-left: 0.25rem;
+                    margin-right: 0.25rem rem;
+                    margin-bottom: 0.25rem;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-radius: 4px;
+                    background-color: #da2428;
+                    border-color: #ed9193;
+                    color: #ffff;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    vertical-align: middle;
+                    padding: 0 7px;
+                    height: 20px;
+                    box-sizing: border-box;
+                    padding-right: 3px;
+
+                    .icon {
+                        line-height: 1em;
                         display: inline-flex;
                         justify-content: center;
                         align-items: center;
-                        vertical-align: middle;
-                        padding: 0 7px;
-                        height: 20px;
-                        box-sizing: border-box;
-                        padding-right: 3px;
-
-                        .icon {
-                            line-height: 1em;
-                            display: inline-flex;
-                            justify-content: center;
-                            align-items: center;
-                            position: relative;
-                            fill: currentColor;
-                            flex-shrink: 0;
-                            color: #ffffff;
-                            border-radius: 50%;
-                            cursor: pointer;
-                            font-size: 10px;
-                            height: 12px;
-                            width: 12px;
-                            margin-left: 4px;
-
-                        }
-
-                        .icon:hover {
-                            background-color: #ed9193;
-                        }
-
-                        .icon.close-icon:hover {
-                            background-color: transparent;
-
-                        }
-
-                    }
-
-                    .tag_default {
-                        margin-left: 0.25rem;
-                        margin-right: 0.25rem;
-                        margin-bottom: 0.25rem;
-                        cursor: pointer;
-                        white-space: nowrap;
-                        font-size: 12px;
-                        line-height: 1;
-                        border-width: 1px;
-                        border-style: solid;
-                        border-radius: 4px;
-                        background-color: #ffffff;
-                        border-color: #ed9193;
-                        color: #da2428;
-                        display: inline-flex;
-                        justify-content: center;
-                        align-items: center;
-                        vertical-align: middle;
-                        padding: 0 7px;
-                        height: 20px;
-                        box-sizing: border-box;
-                        padding-right: 3px;
-
-                        .icon {
-                            line-height: 1em;
-                            display: inline-flex;
-                            justify-content: center;
-                            align-items: center;
-                            position: relative;
-                            fill: currentColor;
-                            flex-shrink: 0;
-                            color: #da2428;
-                            border-radius: 50%;
-                            cursor: pointer;
-                            font-size: 10px;
-                            height: 12px;
-                            width: 12px;
-                            margin-left: 4px;
-
-                        }
-
-                        .icon:hover {
-                            background-color: #da2428;
-                            color: #ebeef5
-                        }
-
-                        .icon.close-icon:hover {
-                            background-color: transparent;
-                        }
-                    }
-
-                    .add_task {
-                        vertical-align: middle;
-                        line-height: 24px;
-                        display: inline-flex;
                         position: relative;
-                        font-size: 12px;
-                        box-sizing: border-box;
-                        width: 100px;
+                        fill: currentColor;
+                        flex-shrink: 0;
+                        color: #ffffff;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 10px;
+                        height: 12px;
+                        width: 12px;
+                        margin-left: 4px;
 
-                        div {
-                            background-color: #ffffff;
-                            background-image: none;
-                            border-radius: 4px;
-                            cursor: text;
-                            transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-                            transform: translate3d(0, 0, 0);
-                            box-shadow: 0 0 0 1px #dcdfe6 inset;
-                            display: inline-flex;
+                    }
+
+                    .icon:hover {
+                        background-color: #ed9193;
+                    }
+
+                    .icon.close-icon:hover {
+                        background-color: transparent;
+
+                    }
+
+                }
+
+                .tag_default {
+                    margin-left: 0.25rem;
+                    margin-right: 0.25rem;
+                    margin-bottom: 0.25rem;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-radius: 4px;
+                    background-color: #ffffff;
+                    border-color: #ed9193;
+                    color: #da2428;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    vertical-align: middle;
+                    padding: 0 7px;
+                    height: 20px;
+                    box-sizing: border-box;
+                    padding-right: 3px;
+
+                    .icon {
+                        line-height: 1em;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        fill: currentColor;
+                        flex-shrink: 0;
+                        color: #da2428;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        font-size: 10px;
+                        height: 12px;
+                        width: 12px;
+                        margin-left: 4px;
+
+                    }
+
+                    .icon:hover {
+                        background-color: #da2428;
+                        color: #ebeef5
+                    }
+
+                    .icon.close-icon:hover {
+                        background-color: transparent;
+                    }
+                }
+
+                .add_task {
+                    vertical-align: middle;
+                    line-height: 24px;
+                    display: inline-flex;
+                    position: relative;
+                    font-size: 12px;
+                    box-sizing: border-box;
+                    width: 100px;
+
+                    div {
+                        background-color: #ffffff;
+                        background-image: none;
+                        border-radius: 4px;
+                        cursor: text;
+                        transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+                        transform: translate3d(0, 0, 0);
+                        box-shadow: 0 0 0 1px #dcdfe6 inset;
+                        display: inline-flex;
+                        flex-grow: 1;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1px 7px;
+
+                        input {
+                            resize: none;
+                            width: 100%;
                             flex-grow: 1;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 1px 7px;
+                            color: #606266;
+                            font-size: inherit;
+                            height: 22px;
+                            line-height: 22px;
+                            padding: 0;
+                            outline: 0;
+                            border: none;
+                            background: 0 0;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
 
-                            input {
-                                resize: none;
+                .add_task_button {
+                    user-select: none;
+                    vertical-align: middle;
+                    background-color: #ffffff;
+                    border: 1px solid #dcdfe6;
+                    border-color: #dcdfe6;
+                    outline: 0;
+                    transition: .1s;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    cursor: pointer;
+                    color: #606266;
+                    text-align: center;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 1;
+                    --el-button-size: 24px;
+                    height: 24px;
+                    padding: 5px 11px;
+                    font-size: 12px;
+                    border-radius: 3px;
+                    margin-left: 0.25rem;
+                    box-sizing: border-box;
+
+                    span {
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                }
+
+                .wrapper {
+                    box-sizing: border-box;
+
+                    .form_container {
+                        padding-top: 20px;
+
+                        .module {
+                            margin-bottom: 30px;
+
+                            h3 {
+                                font-size: 16px;
+                                font-weight: 600;
+                                margin-bottom: 10px;
+                            }
+
+                            .form_item {
+                                align-items: center;
+                                display: flex;
+                                margin-bottom: 60px;
+                            }
+
+                            .form_item_label {
+                                display: inline-flex;
+                                justify-content: flex-end;
+                                align-items: flex-start;
+                                flex: 0 0 auto;
+                                font-size: 14px;
+                                color: #606266;
+                                height: 32px;
+                                line-height: 32px;
+                                padding: 0 12px 0 0;
+                                box-sizing: border-box;
+                                width: 120px;
+                            }
+
+                            .form_item_content {
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                flex: 1;
+                                line-height: 32px;
+                                position: relative;
+                                font-size: 14px;
+                                min-width: 0;
+                                width: 800px
+                            }
+
+                            .taskid {
+                                color: #666;
+                            }
+
+                            .input {
+                                position: relative;
+                                font-size: 14px;
+                                display: inline-flex;
+                                width: 100%;
+                                line-height: 32px;
+                                box-sizing: border-box;
+                                vertical-align: middle;
+                            }
+
+                            .input_wrapper {
+                                display: inline-flex;
+                                flex-grow: 1;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 1px 11px;
+                                background-color: #ffffff;
+                                background-image: none;
+                                border-radius: 4px;
+                                cursor: text;
+                                transition: box-shadow .2s cubic-bezier(.645, .045, .355, 1);
+                                transform: translateZ(0);
+                                box-shadow: 0 0 0 1px #dcdfe6 inset;
+                            }
+
+                            .input__inner {
                                 width: 100%;
                                 flex-grow: 1;
                                 color: #606266;
                                 font-size: inherit;
-                                height: 22px;
-                                line-height: 22px;
+                                height: 30px;
+                                line-height: 30px;
                                 padding: 0;
                                 outline: 0;
                                 border: none;
@@ -188,167 +311,44 @@
                             }
                         }
                     }
+                }
 
-                    .add_task_button {
+
+            }
+
+            .footer {
+                padding: 20px;
+                padding-top: 10px;
+                text-align: right;
+                border-top: 1px solid #ebeef5;
+
+                span {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
                         user-select: none;
                         vertical-align: middle;
-                        background-color: #ffffff;
+                        background-color: #da2428;
                         border: 1px solid #dcdfe6;
                         border-color: #dcdfe6;
-                        outline: 0;
-                        transition: .1s;
-                        font-weight: 500;
-                        white-space: nowrap;
+                        padding: 8px 15px;
+                        font-size: 14 px;
+                        border-radius: 4px;
+                        margin-left: 12px;
                         cursor: pointer;
-                        color: #606266;
-                        text-align: center;
-                        display: inline-flex;
-                        justify-content: center;
-                        align-items: center;
-                        line-height: 1;
-                        --el-button-size: 24px;
-                        height: 24px;
-                        padding: 5px 11px;
-                        font-size: 12px;
-                        border-radius: 3px;
-                        margin-left: 0.25rem;
-                        box-sizing: border-box;
+                        color: #ffffff;
+                        margin-right: 30PX;
 
                         span {
                             display: inline-flex;
                             align-items: center;
                         }
                     }
-
-                    .wrapper {
-                        box-sizing: border-box;
-
-                        .form_container {
-                            padding-top: 20px;
-
-                            .module {
-                                margin-bottom: 30px;
-
-                                h3 {
-                                    font-size: 16px;
-                                    font-weight: 600;
-                                    margin-bottom: 10px;
-                                }
-
-                                .form_item {
-                                    align-items: center;
-                                    display: flex;
-                                    margin-bottom: 60px;
-                                }
-
-                                .form_item_label {
-                                    display: inline-flex;
-                                    justify-content: flex-end;
-                                    align-items: flex-start;
-                                    flex: 0 0 auto;
-                                    font-size: 14px;
-                                    color: #606266;
-                                    height: 32px;
-                                    line-height: 32px;
-                                    padding: 0 12px 0 0;
-                                    box-sizing: border-box;
-                                    width: 120px;
-                                }
-
-                                .form_item_content {
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    align-items: center;
-                                    flex: 1;
-                                    line-height: 32px;
-                                    position: relative;
-                                    font-size: 14px;
-                                    min-width: 0;
-                                    width: 800px
-                                }
-
-                                .taskid {
-                                    color: #666;
-                                }
-
-                                .input {
-                                    position: relative;
-                                    font-size: 14px;
-                                    display: inline-flex;
-                                    width: 100%;
-                                    line-height: 32px;
-                                    box-sizing: border-box;
-                                    vertical-align: middle;
-                                }
-
-                                .input_wrapper {
-                                    display: inline-flex;
-                                    flex-grow: 1;
-                                    align-items: center;
-                                    justify-content: center;
-                                    padding: 1px 11px;
-                                    background-color: #ffffff;
-                                    background-image: none;
-                                    border-radius: 4px;
-                                    cursor: text;
-                                    transition: box-shadow .2s cubic-bezier(.645, .045, .355, 1);
-                                    transform: translateZ(0);
-                                    box-shadow: 0 0 0 1px #dcdfe6 inset;
-                                }
-
-                                .input__inner {
-                                    width: 100%;
-                                    flex-grow: 1;
-                                    color: #606266;
-                                    font-size: inherit;
-                                    height: 30px;
-                                    line-height: 30px;
-                                    padding: 0;
-                                    outline: 0;
-                                    border: none;
-                                    background: 0 0;
-                                    box-sizing: border-box;
-                                }
-                            }
-                        }
-                    }
-
-
-                }
-
-                .footer {
-                    padding: 20px;
-                    padding-top: 10px;
-                    text-align: right;
-                    border-top: 1px solid #ebeef5;
-
-                    span {
-                        display: flex;
-                        justify-content: flex-end;
-
-                        button {
-                            user-select: none;
-                            vertical-align: middle;
-                            background-color: #da2428;
-                            border: 1px solid #dcdfe6;
-                            border-color: #dcdfe6;
-                            padding: 8px 15px;
-                            font-size: 14 px;
-                            border-radius: 4px;
-                            margin-left: 12px;
-                            cursor: pointer;
-                            color: #ffffff;
-                            margin-right: 30PX;
-
-                            span {
-                                display: inline-flex;
-                                align-items: center;
-                            }
-                        }
-                    }
                 }
             }
         }
+
 
         .preview {
             height: 100%;
@@ -585,98 +585,94 @@
             <header>
                 <span>采集配置</span>
             </header>
-            <div id="app">
-                <div class="body">
-                    <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)"
-                        @click="present_task=task.taskId">
-                        <span>{{task.taskName}} </span>
-                        <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                                <path fill="currentColor"
-                                    d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z">
-                                </path>
-                            </svg></i>
-                    </span>
-                    <div v-if="if_edit_add_task" class="add_task" @keyup.enter="if_edit_add_task=false">
-                        <div>
-                            <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称"
-                                v-model="new_task_name" @blur="if_edit_add_task=false">
-                        </div>
+            <div class="body">
+                <span v-for="task in tasks" :key="task.taskId" :class="get_tab_class(task.taskId)"
+                    @click="present_task=task.taskId">
+                    <span>{{task.taskName}} </span>
+                    <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor"
+                                d="M764.288 214.592 512 466.88 259.712 214.592a31.936 31.936 0 0 0-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1 0 45.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0 0 45.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 1 0-45.12-45.184z">
+                            </path>
+                        </svg></i>
+                </span>
+                <div v-if="if_edit_add_task" class="add_task" @keyup.enter="if_edit_add_task=false">
+                    <div>
+                        <input type="text" autocomplete="off" tabindex="0" placeholder="输入任务名称" v-model="new_task_name"
+                            @blur="if_edit_add_task=false">
                     </div>
-                    <button v-else aria-disabled="false" type="button" class="add_task_button"
-                        @click="if_edit_add_task=true">
-                        <span>+新增任务</span>
+                </div>
+                <button v-else aria-disabled="false" type="button" class="add_task_button"
+                    @click="if_edit_add_task=true">
+                    <span>+新增任务</span>
+                </button>
+                <div class="wrapper">
+                    <div class="form_container" v-for="task in tasks" :key="task.taskId"
+                        v-if="task.taskId===present_task">
+                        <form element-loading-text>
+                            <div class="module">
+                                <h3>基础信息</h3>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        采集链接
+                                    </div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tabindex="-1">
+                                                <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                    v-model="task.collectTargetUrl">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        任务ID
+                                    </div>
+                                    <div class="form_item_content">
+                                        <p class="taskid">{{task.taskId}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <h3>列表页配置</h3>
+                                <div class="form_item" v-for="item in list_config" :key="item.id">
+                                    <div class="form_item_label">{{item.name}}</div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tabindex="-1">
+                                                <input type="text" class="input__inner" autocomplete="off"
+                                                    :placeholder="'请输入'+item.name" v-model="task.list_config[item.id]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="module">
+                                <h3>详情页配置</h3>
+                                <div class="form_item">
+                                    <div class="form_item_label">
+                                        正文规则
+                                    </div>
+                                    <div class="form_item_content">
+                                        <div class="input">
+                                            <div class="input_wrapper" tab_index="-1">
+                                                <input type="text" class="input__inner" autocomplete="off" tabindex="0"
+                                                    placeholder="请输入正文规则" v-model="task.content_config.content">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <span>
+                    <button @click="get_preview">
+                        <span>采集并查看结果</span>
                     </button>
-                    <div class="wrapper">
-                        <div class="form_container" v-for="task in tasks" :key="task.taskId"
-                            v-if="task.taskId===present_task">
-                            <form element-loading-text>
-                                <div class="module">
-                                    <h3>基础信息</h3>
-                                    <div class="form_item">
-                                        <div class="form_item_label">
-                                            采集链接
-                                        </div>
-                                        <div class="form_item_content">
-                                            <div class="input">
-                                                <div class="input_wrapper" tabindex="-1">
-                                                    <input type="text" class="input__inner" autocomplete="off"
-                                                        tabindex="0" v-model="task.collectTargetUrl">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form_item">
-                                        <div class="form_item_label">
-                                            任务ID
-                                        </div>
-                                        <div class="form_item_content">
-                                            <p class="taskid">{{task.taskId}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="module">
-                                    <h3>列表页配置</h3>
-                                    <div class="form_item" v-for="item in list_config" :key="item.id">
-                                        <div class="form_item_label">{{item.name}}</div>
-                                        <div class="form_item_content">
-                                            <div class="input">
-                                                <div class="input_wrapper" tabindex="-1">
-                                                    <input type="text" class="input__inner" autocomplete="off"
-                                                        :placeholder="'请输入'+item.name"
-                                                        v-model="task.list_config[item.id]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="module">
-                                    <h3>详情页配置</h3>
-                                    <div class="form_item">
-                                        <div class="form_item_label">
-                                            正文规则
-                                        </div>
-                                        <div class="form_item_content">
-                                            <div class="input">
-                                                <div class="input_wrapper" tab_index="-1">
-                                                    <input type="text" class="input__inner" autocomplete="off"
-                                                        tabindex="0" placeholder="请输入正文规则"
-                                                        v-model="task.content_config.content">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer">
-                    <span>
-                        <button @click="get_preview">
-                            <span>采集并查看结果</span>
-                        </button>
-                    </span>
-                </div>
+                </span>
             </div>
         </div>
         <div class="preview" v-if="if_preview">
@@ -781,77 +777,7 @@
                     { id: "pics", name: "图片内容" },
                     { id: "videos", name: "视频内容" }
                 ],
-                preview_results: [
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于进一步提高政府采购信息查询使用便利度的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202403/t20240304_2367291.html",
-                        "videos": [],
-                        "words": "财办库〔2024〕30号各省、自治区、直辖市、计划单列市财政厅（局），新疆生产建设兵团财政局：　　为加强全国政府采购数据共享共用，进一步提高政府采购信息查询使用便利度，现就有关事项通知如下：　　一、自2024年4月1日起，中国政府采购网地方分网（以下简称地方分网）应当将本地区全部政府采购项目（含低于500万元的项目）的各类公告和公示信息推送至中国政府采购网中央主网（以下简称中央主网）发布。中央主网提供全国政府采购项目信息的“一站式”查询服务。　　二、中央主网开通政府采购代理机构登记信息共享接口。自2024年4月1日起，地方分网可通过接口获取在中央主网登记的政府采购代理机构登记信息。　　三、中央主网开设“数据标准及规范”专栏，发布相关数据接口规范。请各地方分网根据数据接口规范组织完成相关信息系统的接口调试工作，确保政府采购数据共享渠道畅通。　　财政部办公厅　　2024年2月4日相关附件：相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于印发《优抚对象补助经费管理办法》 的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202402/t20240218_2360211.html",
-                        "videos": [],
-                        "words": "财社〔2024〕5号各省、自治区、直辖市、计划单列市财政厅（局）、退役军人事务厅（局），新疆生产建设兵团财政局、退役军人事务局，各省军区（卫戍区、警备区）、新疆军区、西藏军区、新疆生产建设兵团军事部：　　为进一步规范优抚对象补助经费管理，根据《中华人民共和国预算法》、《军人抚恤优待条例》、《烈士褒扬条例》等法律法规和预算管理相关规定，我们对《优抚对象补助经费管理办法》进行了修订。现予印发，请遵照执行。　　附件：优抚对象补助经费管理办法财政部 退役军人事务部 中央军委国防动员部2024年2月2日相关附件：优抚对象补助经费管理办法.docx相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于加强行政事业单位数据资产管理的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202402/t20240218_2360212.html",
-                        "videos": [],
-                        "words": "财资〔2024〕1号 党中央有关部门，国务院各部委、各直属机构，全国人大常委会办公厅，全国政协办公厅，最高人民法院，最高人民检察院，各民主党派中央，有关人民团体，各省、自治区、直辖市、计划单列市财政厅（局），新疆生产建设兵团财政局，有关中央管理企业： 　　为贯彻落实《中共中央 国务院关于构建数据基础制度更好发挥数据要素作用的意见》，加强行政事业单位数据资产管理，充分发挥数据资产价值作用，保障数据资产安全，更好地服务与保障单位履职和事业发展，根据《行政事业性国有资产管理条例》（国务院令第738号）、《财政部关于印发〈关于加强数据资产管理的指导意见〉的通知》（财资〔2023〕141号）等有关规定，现就加强行政事业单位数据资产管理工作通知如下： 　　一、明晰管理责任，健全管理制度 　　（一）明晰责任。行政事业单位数据资产是各级行政事业单位在依法履职或提供公共服务过程中持有或控制的，预期能够产生管理服务潜力或带来经济利益流入的数据资源。地方财政部门应当结合本地实际，逐步建立健全数据资产管理制度及机制，并负责组织实施和监督检查。各部门要切实加强本部门数据资产管理工作，指导、监督所属单位数据资产管理工作。各部门所属单位负责本单位数据资产的具体管理。 　　（二）健全制度。各部门应当根据工作需要和实际情况，建立健全行政事业单位数据资产管理办法，针对数据资产确权、配置、使用、处置、收益、安全、保密等重点管理环节，细化管理要求，明确操作规程，确保管理规范、流程清晰、责任可查。涉及处理个人信息的，应当依照相关法律法规规定的权限和程序进行。 　　二、规范管理行为，释放资产价值 　　（三）从严配置。行政事业单位主要通过自主采集、生产加工、购置等方式配置数据资产。加强数据资产源头管理，在依法履职或提供公共服务过程中，应当按照规定的范围、方法、技术标准等进行自主采集、生产加工数据形成资产。通过购置方式配置数据资产的，应当根据依法履职和事业发展需要，落实过紧日子要求，按照预算管理规定科学配置，涉及政府采购的应当执行政府采购有关规定。　　（四）规范使用。依据《中华人民共和国数据安全法》等规定，做好数据资产加工处理工作，提高数据资产质量和管理水平。规范数据资产授权，经安全评估并按资产管理权限审批后，可将数据加工使用权、数据产品经营权授权运营主体进行运营。运营主体应当建立安全可信的运营环境，在授权范围内运营，并对数据的安全和合规负责。各部门及其所属单位对外授权有偿使用数据资产，应当严格按照资产管理权限履行审批程序，并按照国家规定对资产相关权益进行评估。不得利用数据资产进行担保，新增政府隐性债务。严禁借授权有偿使用数据资产的名义，变相虚增财政收入。 　　（五）开放共享。积极推动数据资产开放共享，在确保公共安全和保护个人隐私的前提下，加强数据资产汇聚共享和开发开放，促进数据资产使用价值充分利用。加大数据资产供给使用，推动用于公共治理、公益事业的数据资产有条件无偿使用，探索用于产业发展、行业发展的数据资产有条件有偿使用。依法依规予以保密的数据资产不予开放，开放共享进入市场的数据资产应当明确授权使用范围，并严格授权使用。 　　（六）审慎处置。各部门及其所属单位应当根据依法履职、事业发展需要和数据资产使用状况，经集体决策和履行审批程序，依据处置事项批复等相关文件及时处置数据资产。确需彻底删除、销毁数据资产的，应当按照保密制度的规定，利用专业技术手段彻底销毁，确保无法恢复。 　　（七）严格收益。建立合理的数据资产收益分配机制，依法依规维护数据资产权益。行政单位数据资产使用形成的收入，按照政府非税收入和国库集中收缴制度的有关规定管理。事业单位数据资产使用形成的收入，由本级财政部门规定具体管理办法。除国家另有规定外，行政事业单位数据资产的处置收入按照政府非税收入和国库集中收缴制度的有关规定管理。任何行政事业单位及个人不得违反国家规定，多收、少收、不收、少缴、不缴、侵占、私分、截留、占用、挪用、隐匿、坐支数据资产相关收入。 　　（八）夯实基础。各部门及其所属单位要结合数据资源目录对数据资产进行清查盘点，并按照《固定资产等资产基础分类与代码》（GB/T 14885-2022）等国家标准，加强数据资产登记，在预算管理一体化系统中建立并完善资产信息卡。 　　三、严格防控风险，确保数据安全 　　（九）维护安全。各部门及其所属单位要认真贯彻总体国家安全观，严格遵守《中华人民共和国网络安全法》、《中华人民共和国数据安全法》、《中华人民共和国个人信息保护法》等法律制度规定，落实网络安全等级保护制度，建立数据资产安全管理制度和监测预警、应急处置机制，推进数据资产分类分级管理，把安全贯穿数据资产全生命周期管理，有效防范和化解各类数据资产安全风险，切实筑牢数据资产安全保障防线。各部门及其所属单位应当按规定做好国家数据安全风险评估。 　　（十）加强监督。各部门及其所属单位要加强数据资产监督，坚持事前监督与事中监督、事后监督相结合，日常监督和专项检查相结合，构筑立体化监督网络；自觉接受人大监督、审计监督、财会监督等各类监督，确保数据资产安全完整。 　　（十一）及时报告。各部门及其所属单位应当将数据资产管理情况逐步纳入行政事业性国有资产管理情况报告。 　　数据资产作为经济社会数字化转型进程中的新兴资产类型，是国家重要的战略资源。各部门及其所属单位要按照国家有关规定及本通知要求，切实加强行政事业单位数据资产管理，因地制宜探索数据资产管理模式，充分实现数据要素价值，更好发挥数据资产对推动数字经济发展的支撑作用。 　　财  政  部 　　2024年2月5日 相关附件：相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于印发《国家文物保护资金管理办法》的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202402/t20240204_2356411.html",
-                        "videos": [],
-                        "words": "财教〔2023〕279号  各省、自治区、直辖市、计划单列市财政厅（局）、文物局，新疆生产建设兵团财政局、文物局：  为进一步规范国家文物保护资金管理，提高财政资金使用效益，我们对《财政部 国家文物局关于印发〈国家文物保护专项资金管理办法〉的通知》（财文〔2018〕178号）进行了修订。现将修订后的资金管理办法印发给你们，请遵照执行。 附件：国家文物保护资金管理办法 财政部  国家文物局2023年12月30日相关附件：相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "市人民政府办公厅关于印发武汉市深化“中国快递示范城市”建设实施方案的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202401/t20240130_2352822.html",
-                        "videos": [],
-                        "words": "各区人民政府，市人民政府各部门：《武汉市深化“中国快递示范城市”建设实施方案》已经市人民政府同意，现印发给你们，请认真组织实施。武汉市人民政府办公厅2024年1月15日武汉市深化“中国快递示范城市”建设实施方案为深化“中国快递示范城市”建设，推进全市快递业高质量发展，按照国家邮政局和省委、省政府工作部署，结合我市实际，特制订本方案。一、总体要求坚持以习近平新时代中国特色社会主义思想为指导，深入贯彻落实党的二十大和二十届二中全会精神，完整、准确、全面贯彻新发展理念，服务构建新发展格局，深化交通强国建设试点，建设现代化快递服务体系，推动交通区位优势加快转化为国内国际双循环枢纽链接优势。到2025年，全市快递业发展规模迈上新台阶、服务网络更加完善、监管水平显著提升。累计培育7个年业务量突破1亿件的快递品牌和5个快递服务制造业、农业金银牌项目，全行业新增就业岗位5000个以上，快递企业网点标准化率100％，快递企业安全生产标准化建设实现100％达标，快递业务量突破23亿件，业务收入达到212亿元以上。二、主要任务（一）加强基础设施建设，健全现代化寄递网络体系1.扎实推进农村寄递物流体系建设。加强街道（乡镇）商贸中心、街道（乡镇）村物流配送服务站点布局，新建或者改造升级不少于3个街道（乡镇）商贸中心、新城区物流配送中心。深入推进“快递进村”，实现建制村寄递物流综合服务点全覆盖，打通农产品进城“最初一公里”和工业品下乡“最后一公里”。新（改）建农产品仓储保鲜冷链物流设施30个以上。加快推动农村地区快递基础设施智能化建设和改造。（责任单位：市邮政管理局、市商务局、市交通运输局、市农业农村局、市乡村振兴局，各相关区人民政府〈含开发区、长江新区、风景区管委会，下同〉）2.优化物流配送网络。充分利用邮政、商贸、供销等现有终端网点，完善快递末端配送体系，新增300个以上末端共同配送网点，建成覆盖15分钟便民生活圈以及住宅小区的智能末端配送体系。优化城市配送车辆通行管理和停靠装卸政策措施，在商超等快递末端配送网点等有密集装卸作业需求的区域，设置城市货运配送车辆专用临时停靠装卸点200个以上。（责任单位：市公安交管局、市交通运输局、市商务局、市城管执法委、市邮政管理局，各相关区人民政府）3.提升枢纽开放功能。出台快递服务跨境电商支持政策，推动“寄递+跨境电商”。鼓励企业探索建立海外仓，联合境内外上下游企业在“一带一路”沿线国家协同布局。支持寄递企业开展国际小包业务和国际航空快件中转集拼业务，扩大国际快件通达范围。引导寄递企业创新开展多种物流增值服务业务，由单一物流服务商向综合服务商转型。依托武汉天河机场和鄂州花湖机场，加强国际快递航空枢纽、口岸国际邮件交换站和快件监管区建设。充分利用中欧班列（武汉），定制开展市场化、定制化物流服务。优化快件在通关、结汇、退税等流程，推进“单一窗口”建设，推动实现邮关、商关、跨境电商一体化。（责任单位：市邮政管理局、市商务局、市交通运输局，武汉海关，各相关区人民政府）（二）强化产业协同发展，推动快递服务扩容提质1.深度服务农业发展。推广“农产品+大同城”寄递服务模式，培育“一市一品”精品项目，打造具有武汉特色的“快递+农业”金牌、银牌项目。大力实施“荆楚优品”工程，推动武汉名优特产进商圈、进超市、进展会、进电商，对接特色小镇，服务巩固拓展脱贫攻坚成果同乡村振兴有效衔接。鼓励企业创新冷链物流基础设施经营模式，开展多品种经营和产销双向合作，提高淡季期间设施利用率。构建特色农副产品的垂直服务渠道和区域服务网络。（责任单位：市邮政管理局、市农业农村局、市乡村振兴局、市商务局、市交通运输局）2.深度服务制造业发展。引导寄递企业为制造业企业提供高效快捷的物流服务，鼓励寄递企业与制造业企业深度合作，支撑制造业高质量集群化发展。加快推进“快递进厂”，实施一批入厂物流、仓配一体化、订单末端配送、嵌入式电子商务等代表项目，打造“快递+制造业”金牌、银牌项目。加快发展面向高技术制造业、装备制造业等高附加值航空货运服务。鼓励快递企业入驻工业园区、商贸园区、电商园区、物流园区、保税园区等。培育若干个快递业与制造业深度融合典型项目和深度融合发展先行区。（责任单位：市邮政管理局、市商务局、市交通运输局）3.深化电商快递协同。提高快递服务农村电商、跨境电商和新兴电商水平。鼓励电商快递与新零售服务深度融合，促进线上线下消费融合发展。推动建设电商快递园区，鼓励寄递企业入驻电商园区和电商聚集区，实现仓配一体化，促进上下游、产供销有效衔接。开展电商快件寄递服务专项整治。（责任单位：市邮政管理局、市商务局、市市场监管局）（三）优化行业发展环境，推动行业发展转型升级1.营造良好市场生态。坚持依法治邮，加大重点领域监管力度，强化涉邮政快递业消费者权益保护。支持寄递企业在武汉落户和布局企业总部、区域总部、功能总部，吸引快递龙头企业在武汉集聚。引导企业规范内部管理，压实快递企业区域总部主体责任，建设统一开放、竞争有序的市场体系，实现准入畅通、开放有序、竞争充分、秩序规范。（责任单位：市邮政管理局、市发改委、市市场监管局、市商务局、市交通运输局，各相关区人民政府）2.激发市场主体活力。对快递企业使用物流建设项目用地，适当降低亩均投资、税收等考核指标，鼓励采取弹性年期出让、先租后让、租让结合等多种方式供地。支持存量土地利用，在符合规划、不改变用途的前提下，对提高自有工业用地或者仓储用地利用率、容积率并用于仓储、分拨转运等物流设施建设的，不再增收土地价款。（责任单位：市邮政管理局、市交通运输局、市自然资源规划局，各相关区人民政府）3.提高科技和绿色水平。推动云计算、大数据、物联网、区块链、人工智能和快递业深度融合，搭建科技供给和行业需求对接平台。鼓励快递企业采用先进适用技术和装备，推动技术创新应用由分拨环节向收投两端、仓储前端、智慧末端延伸。实施无人仓建设等快递物流智能化改造行动。鼓励第三方科技应用平台、装备设施租赁平台发展。加大智能物流技术研发力度，推动关键技术装备产业化。促进安全绿色技术与快递融合发展。鼓励绿色环保包装材料应用，倡导简约包装，减少二次包装。推广应用节水、节电等技术工艺设备，结合绿色网点、绿色分拨中心、绿色企业创建，推广无废快递网点（分拨中心）创建，推广新能源和清洁能源车辆，将“无废”理念融入快递示范城市建设。到2025年，包装废弃物回收装置实现网点全覆盖，快递绿色包装使用率达到90％。（责任单位：市邮政管理局、市经信局、市科技局、市生态环境局、市交通运输局，各相关区人民政府）（四）加强行业治理能力建设，增强从业人员获得感幸福感1.加强行业安全监管。开展全市平安寄递专项行动，推动邮政行业应急管理工作纳入地方应急管理体系，探索建立跨部门、跨地区应急救援和联动处置机制。落实“实名收寄、收寄验视、过机安检”制度，压实企业主体责任。加强寄递企业行业许可涉国家安全事项审查，配合做好行业反恐、禁毒、扫黄打非等专项工作。加强舆情监测管理和网络安全管理。建立健全信用信息共享、联合惩戒、信用修复机制，强化信用监管。完善数字化监管模式，创新行业监管方式，打造包容审慎监管服务新业态。（责任单位：市邮政管理局、市应急管理局、市公安局、市交通运输局、市政务服务大数据局，市委网信办、市国安局，各相关区人民政府）2.维护快递员合法权益。对快递员等新就业形态劳动者，符合确立劳动关系法定情形的，指导企业或者用工合作企业依法与劳动者订立劳动合同，督促用人单位依法为建立劳动关系的快递员缴纳社会保险费。定期开展快递员困难帮扶、金秋助学、医疗互助、就业服务和送温暖、送清凉、送健康等关爱活动。提升劳动争议处理效能，及时妥善处置涉及快递员劳动争议案件及相关民事纠纷，督促指导各类协调组织、法律援助机构及其他专业化社会组织为快递员提供专业纠纷调解、法律援助等服务。（责任单位：市邮政管理局、市人社局、市司法局、市医保局，市总工会，各相关区人民政府）三、保障措施（一）加强组织领导。发挥市创建“中国快递示范城市”联席会议工作机制作用，强化统筹协调，定期研究部署重要事项和重点工作，解决创建中遇到的困难和问题，推动、督导重点工作落实。（二）加强资金保障。积极争取中央专项资金和地方财政资金用于支持武汉快递基础设施建设、绿色快递发展等项目。落实国家和省、市有关文件精神，承担邮政普遍服务、特殊服务和快递服务末端基础设施、快递环境污染治理建设、维护、运营中由市级财政负责相应支出。（三）加强政策支持。支持将城乡快递服务网点和快件处理中心、集散中心等快递服务基础设施纳入本级国土空间规划和物流园区、城市配送发展规划，合理安排建设布局、用地规模和开发时序，预留快递服务业发展空间。（四）营造良好氛围。充分发挥主流媒体的宣传引导作用，做好创建“中国快递示范城市”各项政策的解读工作，引导全民积极参与，为建设“中国快递示范城市”营造良好的舆论氛围和社会环境。相关附件：相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于印发《公益事业捐赠票据使用管理办法》的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202401/t20240123_2347883.html",
-                        "videos": [],
-                        "words": "财综〔2024〕1号党中央有关部门，国务院各部委、各直属机构，全国人大常委会办公厅，全国政协办公厅，最高人民法院，最高人民检察院，各民主党派中央，有关人民团体，各省、自治区、直辖市、计划单列市财政厅（局），新疆生产建设兵团财政局： 　　为规范公益事业捐赠票据使用和管理行为，加强公益事业捐赠收入财务监督管理，促进社会公益事业发展，根据《中华人民共和国公益事业捐赠法》、《中华人民共和国慈善法》、《财政票据管理办法》（财政部令第104号）等规定，我们对《公益事业捐赠票据使用管理暂行办法》（财综〔2010〕112号）进行了修订，现将修订后的《公益事业捐赠票据使用管理办法》印发，请遵照执行。执行中如有问题，请及时反馈我部。 　　附件：公益事业捐赠票据使用管理办法 财  政  部 2024年1月13日 附件：公益事业捐赠票据使用管理办法  第一章 总则 　　第一条 为规范公益事业捐赠票据使用和管理行为，加强公益事业捐赠收入财务监督管理，促进社会公益事业发展，根据《中华人民共和国公益事业捐赠法》、《中华人民共和国慈善法》、《财政票据管理办法》（财政部令第104号）等规定，制定本办法。 　　第二条 本办法所称的公益事业捐赠票据，是指县级以上人民政府及其部门、公益性事业单位、公益性社会组织（以下统称公益性单位）按照自愿、无偿原则，依法接受并用于公益事业的捐赠财物时，向提供捐赠的自然人、法人和其他组织开具的凭证。 　　本办法所称的公益事业，应当符合《中华人民共和国公益事业捐赠法》第三条对公益事业范围的规定或者《中华人民共和国慈善法》第三条对慈善活动范围的规定。 　　第三条 公益事业捐赠票据是会计核算的原始凭证，包括电子和纸质两种形式。电子票据和纸质票据具有同等法律效力，是财政、税务、审计、监察等部门进行监督检查的依据。 　　公益事业捐赠票据可作为捐赠人对外捐赠并根据国家有关规定申请捐赠款项税前扣除的有效凭证。 　　第四条 各级财政部门是公益事业捐赠票据的主管部门，按照职能分工和管理权限负责公益事业捐赠票据的监（印）制、核发、保管、核销、销毁和监督检查等工作。 　　第五条 各级财政部门应当积极推广运用公益事业捐赠电子票据，实现电子开票、自动核销、全程跟踪、源头控制。  第二章 公益事业捐赠票据的内容和适用范围 　　第六条 公益事业捐赠票据的基本内容包括票据名称、票据监制章、票据代码、票据号码、交款人统一社会信用代码、交款人、校验码、开票日期、二维码（条形码）、项目编码、项目名称、单位、数量、标准、金额（元）、金额合计（大写）/（小写）、备注、其他信息、收款单位（章）、复核人、收款人等。 　　公益事业捐赠纸质票据一般包括存根联、收据联、记账联。存根联由开票方留存，收据联由支付方收执，记账联由开票方留做记账凭证。 　　第七条 下列按照自愿和无偿原则依法接受捐赠的行为，应当开具公益事业捐赠票据： 　　（一）县级以上人民政府及其部门在发生自然灾害时或者应捐赠人要求接受的捐赠。 　　（二）公益性事业单位接受用于公益事业的捐赠。 　　（三）公益性社会组织接受用于公益事业的捐赠。 　　（四）财政部门认定的其他可以使用公益事业捐赠票据的行为。 　　第八条 公益性单位以捐赠名义从事营利活动或与出资人利益相关的行为，以及集资、摊派、筹资、赞助等行为，不得使用公益事业捐赠票据。 第三章 公益事业捐赠票据的监（印）制、领用和核发 　　第九条 公益事业捐赠票据分别由财政部或省级财政部门统一监（印）制，并套印全国统一式样的财政票据监制章。 　　公益事业捐赠票据实行全国统一的式样、编码规则和电子票据数据标准，由财政部负责制定。 　　公益事业捐赠电子票据数据标准包括数据要素、数据结构、数据格式和防伪方法等内容。各级财政部门应当按照统一的财政电子票据数据标准，生成、传输、存储和查验公益事业捐赠电子票据。 　　第十条 公益事业捐赠票据由独立核算、会计制度健全的公益性单位向同级财政部门申领。 　　财政部门及其工作人员应当为申领单位提供便利，一次性告知领用公益事业捐赠票据的相关程序、材料、要求及依据等内容。 　　第十一条 公益事业捐赠票据实行凭证领用、分次限量、核旧领新制度。 　　公益事业捐赠票据一次领用的数量一般不超过本单位6个月的使用量。 　　第十二条 公益性单位首次申领公益事业捐赠票据时，应当提供《财政票据领用证》和领用申请，详细列明领用公益事业捐赠票据的使用范围和项目，按要求提供申领公益事业捐赠票据相关的可核验信息，并对提供信息的真实性承担法律责任。 　　财政部门依照本办法，对公益性单位提供的公益事业捐赠票据使用范围和项目进行审核，对符合公益事业捐赠票据适用范围的，予以核准；不符合公益事业捐赠票据适用范围的，不予以核准，并向申领单位说明原因。 　　公益性单位未取得《财政票据领用证》的，应按照规定程序先办理《财政票据领用证》。 　　第十三条 公益性单位再次领用公益事业捐赠票据时，应当出示《财政票据领用证》，并提交前次领用公益事业捐赠票据的核销情况。 第四章 公益事业捐赠票据的使用与管理 　　第十四条 公益性单位应当指定专人负责管理公益事业捐赠票据，建立使用管理制度，设置管理台账，按规定向财政部门报送公益事业捐赠票据的申领、使用、作废、结存等情况。 　　第十五条 公益性单位接受应用于公益事业的捐赠财物时，应当向捐赠人开具公益事业捐赠票据。 　　公益性单位接受货币（包括外币）捐赠时，应按实际收到的金额填开公益事业捐赠票据。 　　公益性单位接受非货币性捐赠时，应按其公允价值填开公益事业捐赠票据。 　　第十六条 公益性单位开具公益事业捐赠电子票据，应当确保电子票据及其元数据自形成起完整无缺、来源可靠，未被非法更改，传输过程中发生的形式变化不得影响电子票据内容的真实、完整。 　　第十七条 公益性单位应当按票据号段顺序使用公益事业捐赠票据，填写时做到字迹清楚，内容完整、真实，印章齐全，各联次内容和金额一致。 　　公益事业捐赠电子票据填写错误的，应当开具红字电子票据。 　　公益事业捐赠纸质票据填写错误的，应当另行填写。因填写错误等原因作废的纸质票据，应当加盖作废戳记或者注明“作废”字样，并完整保存全部联次，不得私自销毁。 　　第十八条 公益性单位负责向捐赠人交付公益事业捐赠电子票据。捐赠人未能正常获取公益事业捐赠电子票据信息的，由开票单位负责处理。 　　公益事业捐赠电子票据可以通过全国财政电子票据查验平台查询状态、查验真伪。 　　第十九条 公益事业捐赠电子票据使用单位和付款单位应当准确、完整、有效接收和读取公益事业捐赠电子票据，并按照会计信息化和会计档案等有关管理要求归档入账。 　　第二十条 公益事业捐赠票据的领用单位不得转让、出借、代开、买卖、擅自销毁、涂改公益事业捐赠票据，不得将公益事业捐赠票据与其他财政票据、发票互相串用。 　　第二十一条 公益性单位遗失公益事业捐赠纸质票据的，应自发现之日起3日内登报声明作废，并将遗失原因等有关情况，及时以书面形式报送原核发票据的财政部门备案。 　　第二十二条 各省、自治区、直辖市财政部门监（印）制的公益事业捐赠票据，一般应当在本行政区域内核发使用，不得跨行政区域核发使用，但本地区派驻其他省、自治区、直辖市的公益性单位除外。 第五章 公益事业捐赠票据的核销、销毁和监督检查 　　第二十三条 公益性单位应当向同级财政部门申请核销公益事业捐赠票据，并提交公益事业捐赠票据的使用情况说明，包括票据起止号码、使用份数、作废份数、收取金额等。 　　受理申请的财政部门应当及时对申请单位提交的公益事业捐赠票据进行核销，出具核销情况说明。 　　财政部门核销公益事业捐赠票据时，发现公益性单位存在未按规定使用公益事业捐赠票据的行为，应当责令该单位限期整改，整改期间暂停核发公益事业捐赠票据。 　　第二十四条 公益性单位应当妥善保管已开具的公益事业捐赠纸质票据存根，票据存根保存期限一般为5年。 　　保存期满需要销毁的公益事业捐赠纸质票据存根和未使用的需要作废并销毁的公益事业捐赠纸质票据，由公益性单位负责登记造册，报经同级财政部门核准后，由同级财政部门组织销毁。 　　第二十五条 撤销、改组、合并的公益性单位，在办理《财政票据领用证》的变更或注销手续时，应对公益性单位已使用的公益事业捐赠纸质票据存根及尚未使用的公益事业捐赠票据登记造册，并交送同级财政部门统一核准、销毁。  　　第二十六条 各级财政部门应当根据实际情况和管理需要，对公益事业捐赠票据的监（印）制、使用、管理等情况进行监督检查。 　　第二十七条 公益性单位应当自觉接受财政部门的监督检查，如实反映情况，提供有关资料，不得隐瞒情况、弄虚作假或者拒绝、阻碍监督检查。 　　第二十八条 单位和个人在公益事业捐赠票据监（印）制、领取、使用、管理等过程中存在各类违法违规行为的，依法追究相应责任。 　　第二十九条 各级财政部门对公益事业捐赠票据使用管理情况进行监督检查时，不得滥用职权、徇私舞弊，不得向被查公益性单位收取任何费用。  第六章 附则 　　第三十条 各省、自治区、直辖市财政部门可以根据本办法，结合本地区实际情况，制定具体实施办法，报财政部备案。 　　第三十一条 本办法自2024年2月1日起施行。《财政部关于印发〈公益事业捐赠票据使用管理暂行办法〉的通知》（财综〔2010〕112号）同时废止。 相关附件：相关文章：相关链接："
-                    },
-                    {
-                        "audios": [],
-                        "pics": [],
-                        "taskId": 862207002468921344,
-                        "time": 0,
-                        "title": "关于修订支线航空补贴管理暂行办法的通知",
-                        "url": "https://czj.wuhan.gov.cn/BMDT/TZGG/202401/t20240109_2339313.html",
-                        "videos": [],
-                        "words": "财建〔2023〕413号各省、自治区、直辖市、计划单列市财政厅（局），新疆生产建设兵团财政局，民航各地区管理局，各航空公司：为促进区域支线航空协调发展，满足偏远地区人民群众出行和人员跨区域流动的基本需要，根据《民航发展基金征收使用管理暂行办法》（财综〔2012〕17号）及有关规定，财政部、中国民航局对《支线航空补贴管理暂行办法》（民航发〔2013〕28号）进行了修订。现将修订后的办法印发给你们，请遵照执行。执行中如有问题请及时反馈，财政部、中国民航局将结合有关情况研究完善。 财政部 中国民航局2023年12月18日相关附件：支线航空补贴管理暂行办法(2023年修订).doc相关文章：相关链接："
-                    }],
+                preview_results: [],
                 tasks: [
                     {
                         "taskName": "豆瓣电影排行榜",
